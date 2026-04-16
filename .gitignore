@@ -9,3 +9,6 @@
 /fish/fish_variables
 
 .SRCINFO
+
+vscode/keybindings.json
+vscode/settings.json
