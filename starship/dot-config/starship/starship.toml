@@ -1,0 +1,11 @@
+[docker_context]
+disabled = true
+
+[git_status]
+disabled = true
+
+[gradle]
+disabled = true
+
+[kotlin]
+disabled = true

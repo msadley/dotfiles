@@ -1,0 +1,22 @@
+# Move to workspace by number
+alt - 1 : yabai -m space --focus 1
+alt - 2 : yabai -m space --focus 2
+alt - 3 : yabai -m space --focus 3
+alt - 4 : yabai -m space --focus 4
+alt - 5 : yabai -m space --focus 5
+
+# Focus next/previous workspace
+alt - n : yabai -m space --focus next
+alt - p : yabai -m space --focus prev
+
+# Focus the most recently visited workspace
+alt - tab : yabai -m space --focus recent
+
+# Move window to workspace and follow focus
+shift + alt - 1 : yabai -m window --space 1; yabai -m space --focus 1
+shift + alt - 2 : yabai -m window --space 2; yabai -m space --focus 2
+shift + alt - 3 : yabai -m window --space 3; yabai -m space --focus 3
+
+# Move window to next/previous workspace and follow focus
+shift + alt - n : yabai -m window --space next; yabai -m space --focus next
+shift + alt - p : yabai -m window --space prev; yabai -m space --focus prev

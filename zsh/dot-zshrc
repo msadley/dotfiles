@@ -1,0 +1,73 @@
+# Brew settings
+export HOMEBREW_NO_ENV_HINTS=1
+
+# Zsh general config
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+
+# Set up completion cache
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
+
+# Disable case matching for tab completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# Set up autovenv
+autoload -U add-zsh-hook
+
+_auto_venv() {
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    local venv_parent="${VIRTUAL_ENV%/*}"
+    if [[ "$PWD"/ != "$venv_parent"/* && "$PWD" != "$venv_parent" ]]; then
+      deactivate
+    fi
+  fi
+
+  if [[ -z "$VIRTUAL_ENV" ]]; then
+    for dir in .venv venv env .env; do
+      if [[ -f "$PWD/$dir/bin/activate" ]]; then
+        source "$PWD/$dir/bin/activate"
+        break
+      fi
+    done
+  fi
+}
+
+add-zsh-hook chpwd _auto_venv
+_auto_venv
+
+# Set up tab menu
+zmodload zsh/complist
+
+zstyle ':completion:*' menu select
+
+bindkey '^[[Z' reverse-menu-complete
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
+
+alias l="ls -la"
+alias redock="docker compose down && docker compose up"
+alias redockd="docker compose down && docker compose up -d"
+
+# PATH Variable 
+export PATH="/usr/local/opt/openjdk@21/bin:$PATH"
+export PATH="/Users/adley/.local/bin:$PATH"
+
+# Starship prompt
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+eval "$(starship init zsh)"
