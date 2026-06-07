@@ -2,3 +2,5 @@ vscode/keybindings.json
 vscode/settings.json
 
 karabiner/dot-config/karabiner/automatic_backups
+.DS_Store
+lazy-lock.json
