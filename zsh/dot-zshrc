@@ -23,6 +23,8 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 # Set up autovenv
 autoload -U add-zsh-hook
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 _auto_venv() {
   if [[ -n "$VIRTUAL_ENV" ]]; then
     local venv_parent="${VIRTUAL_ENV%/*}"
@@ -60,14 +62,36 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 
-alias l="ls -la"
-alias redock="docker compose down && docker compose up"
-alias redockd="docker compose down && docker compose up -d"
+# Set up after-command new line
+__add_newline=0
+
+precmd() {
+  if (( __add_newline )); then
+    print ""
+  fi
+  __add_newline=1
+}
+
+alias clear="clear; __add_newline=0"
+
+function _clear_screen_without_newline() {
+  __add_newline=0
+  zle clear-screen
+}
+zle -N _clear_screen_without_newline
+bindkey '^L' _clear_screen_without_newline
 
 # PATH Variable 
 export PATH="/usr/local/opt/openjdk@21/bin:$PATH"
-export PATH="/Users/adley/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Source aliases
+source "$HOME/.config/zsh/aliases.zsh"
 
 # Starship prompt
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
