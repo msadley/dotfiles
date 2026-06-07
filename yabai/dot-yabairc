@@ -1,0 +1,23 @@
+# Configure hyprland-like tiling management
+yabai -m config layout bsp
+
+# Set beautiful paddings 
+yabai -m config top_padding    8
+yabai -m config bottom_padding 8
+yabai -m config left_padding   8
+yabai -m config right_padding  8
+yabai -m config window_gap     8
+
+# Set focus follow mouse autoraise 
+yabai -m config focus_follows_mouse autoraise
+
+# Set mouse follows focus mode
+yabai -m config mouse_follows_focus on
+
+# Hide tiled window shadows
+yabai -m config window_shadow float
+
+# Workaround for Ghostty tabs
+yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
+yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
+
