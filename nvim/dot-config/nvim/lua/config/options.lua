@@ -4,3 +4,8 @@
 vim.g.colors_name = "ayu"
 vim.o.background = "dark"
 vim.opt.relativenumber = false
+
+-- Disable default trouble statusline to customize it in lualine.lua
+vim.g.trouble_lualine = false
+
+

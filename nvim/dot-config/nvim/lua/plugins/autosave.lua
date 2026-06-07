@@ -10,11 +10,26 @@ return {
     debounce_delay = 1000,
 
     -- Which events to listen to
-    trigger_events = { "InsertLeave", "TextChanged", "TextChangedI" },
+    trigger_events = {
+      immediate_save = { "BufLeave", "FocusLost", "QuitPre", "VimSuspend" },
+      defer_save = { "InsertLeave", "TextChanged" },
+      cancel_deferred_save = { "InsertEnter" },
+    },
 
     -- Conditions to check before saving
     condition = function(buf)
       local fn = vim.fn
+
+      -- Only save if Neovim is currently in Normal mode
+      if vim.api.nvim_get_mode().mode ~= "n" then
+        return false
+      end
+
+      -- Only save if there are no LSP/diagnostic errors in the buffer
+      local errors = vim.diagnostic.get(buf, { severity = vim.diagnostic.severity.ERROR })
+      if #errors > 0 then
+        return false
+      end
 
       -- LazyVim specific filetypes to ignore
       local excluded_filetypes = {
@@ -51,19 +66,6 @@ return {
 
     -- Create an augroup for the notifications
     local autosave_group = vim.api.nvim_create_augroup("autosave_notifications", { clear = true })
-
-    -- 1. Message on save
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "AutoSaveWritePost",
-      group = autosave_group,
-      callback = function(args)
-        if args.data and args.data.saved_buffer ~= nil then
-          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(args.data.saved_buffer), ":t")
-          -- Formatted for LazyVim's notification system
-          vim.notify("Saved " .. filename, vim.log.levels.INFO, { title = "AutoSave" })
-        end
-      end,
-    })
 
     -- 2. Message on enable
     vim.api.nvim_create_autocmd("User", {
