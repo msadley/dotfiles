@@ -50,80 +50,42 @@ vim.api.nvim_create_autocmd({ "TermOpen", "BufWinEnter" }, {
   end,
 })
 
--- Open Neo-tree by default on startup and when switching projects (directory changes)
-vim.api.nvim_create_autocmd({ "VimEnter", "DirChanged" }, {
+-- Open Neo-tree by default on startup only if a folder is passed on the command line
+vim.api.nvim_create_autocmd("VimEnter", {
   group = vim.api.nvim_create_augroup("NeoTreeOpenOnStartup", { clear = true }),
-  callback = function(args)
-    local event = args.event
+  callback = function()
     local is_diff = vim.opt.diff:get()
+    if is_diff then
+      return
+    end
 
     vim.schedule(function()
-      -- If event is VimEnter, handle directory arguments
-      if event == "VimEnter" then
-        -- Check if Neovim was opened with a folder (e.g., `nvim .` or `nvim ~/project`)
-        local path = vim.fn.argv(0)
-        local is_dir = type(path) == "string" and path ~= "" and vim.fn.isdirectory(path) == 1
+      -- Check if Neovim was opened with a folder (e.g., `nvim .` or `nvim ~/project`)
+      local path = vim.fn.argv(0)
+      local is_dir = type(path) == "string" and path ~= "" and vim.fn.isdirectory(path) == 1
 
-        if is_dir then
-          -- Resolve absolute path and change directory to it
-          local abs_path = vim.fn.fnamemodify(path, ":p")
-          if #abs_path > 1 and abs_path:sub(-1) == "/" then
-            abs_path = abs_path:sub(1, -2)
-          end
-          vim.fn.chdir(abs_path)
-
-          -- 1. Create a fresh, empty buffer in the main window
-          vim.cmd("enew")
-
-          -- 2. Find and delete the raw directory buffer that Neovim created
-          for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-            local buf_name = vim.api.nvim_buf_get_name(buf)
-            if buf_name ~= "" and (buf_name == abs_path or buf_name .. "/" == abs_path or vim.fn.isdirectory(buf_name) == 1) then
-              vim.api.nvim_buf_delete(buf, { force = true })
-            end
-          end
-
-          -- Show Neo-tree sidebar on the target folder and exit
-          vim.cmd("Neotree show dir=" .. vim.fn.fnameescape(abs_path))
-          return
+      if is_dir then
+        -- Resolve absolute path and change directory to it
+        local abs_path = vim.fn.fnamemodify(path, ":p")
+        if #abs_path > 1 and abs_path:sub(-1) == "/" then
+          abs_path = abs_path:sub(1, -2)
         end
-      end
+        vim.fn.chdir(abs_path)
 
-      -- Check if we are in diff mode, or editing git commit/rebase messages
-      if is_diff then
-        return
-      end
+        -- 1. Create a fresh, empty buffer in the main window
+        vim.cmd("enew")
 
-      local filetype = vim.bo.filetype
-      if filetype == "gitcommit" or filetype == "gitrebase" then
-        return
-      end
-
-      -- Also check if the buffer is a special type (only on VimEnter)
-      if event == "VimEnter" then
-        if vim.bo.buftype == "nofile" or vim.bo.buftype == "quickfix" then
-          return
-        end
-      end
-
-      -- Show Neo-tree sidebar for file openings, empty startup, or project switching
-      if event == "VimEnter" then
-        local path = vim.fn.argv(0)
-        local is_file = type(path) == "string" and path ~= "" and vim.fn.isdirectory(path) == 0
-        if is_file then
-          local root = nil
-          if _G.LazyVim and _G.LazyVim.root and _G.LazyVim.root.get then
-            root = _G.LazyVim.root.get()
+        -- 2. Find and delete the raw directory buffer that Neovim created
+        for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+          local buf_name = vim.api.nvim_buf_get_name(buf)
+          if buf_name ~= "" and (buf_name == abs_path or buf_name .. "/" == abs_path or vim.fn.isdirectory(buf_name) == 1) then
+            vim.api.nvim_buf_delete(buf, { force = true })
           end
-          if not root or root == "" or root == vim.fn.expand("$HOME") then
-            root = vim.fn.fnamemodify(path, ":p:h")
-          end
-          vim.cmd("Neotree reveal dir=" .. vim.fn.fnameescape(root))
-          return
         end
-      end
 
-      vim.cmd("Neotree show")
+        -- Show Neo-tree sidebar on the target folder
+        vim.cmd("Neotree show dir=" .. vim.fn.fnameescape(abs_path))
+      end
     end)
   end,
 })

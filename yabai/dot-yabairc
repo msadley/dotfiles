@@ -12,7 +12,7 @@ yabai -m config window_gap     8
 yabai -m config focus_follows_mouse autoraise
 
 # Set mouse follows focus mode
-yabai -m config mouse_follows_focus on
+yabai -m config mouse_follows_focus off
 
 # Hide tiled window shadows
 yabai -m config window_shadow float
@@ -21,3 +21,10 @@ yabai -m config window_shadow float
 yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
 yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
 
+# Window blacklist
+yabai -m rule --add app='^Ajustes do Sistema$' manage=off
+yabai -m rule --add app='^Pré-Visualização$' manage=off
+yabai -m rule --add app='^Orion$' title='^Orion Preview$' manage=off
+yabai -m rule --add app='^Atalhos$' manage=off
+yabai -m rule --add app='^Notas$' manage=off
+yabai -m rule --add app='^Calendário$' manage=off

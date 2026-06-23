@@ -8,4 +8,5 @@ vim.opt.relativenumber = false
 -- Disable default trouble statusline to customize it in lualine.lua
 vim.g.trouble_lualine = false
 
-
+-- Enable both English and Portuguese spell checking
+vim.opt.spelllang = { "en", "pt" }

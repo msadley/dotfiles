@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET_APP="Zen"
+TARGET_APP="Orion"
 
 WINDOW_ID=$(yabai -m query --windows | jq ".[] | select(.app == \"$TARGET_APP\") | .id" | head -n 1)
 
