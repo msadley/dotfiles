@@ -1,12 +1,11 @@
-theme = ayu
+theme = Rose Pine
 
 font-family = CaskaydiaCove
-font-size = 13.5
+font-size = 11
 
-window-padding-x = 0
-window-padding-y = 2,0
-
-window-padding-balance = false
+window-padding-x = 2
+window-padding-y = 2
+window-padding-balance = true
 
 window-padding-color = extend
 
