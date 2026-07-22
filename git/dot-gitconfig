@@ -1,0 +1,8 @@
+[user]
+        name = msadley
+        email = mendes.adley@gmail.com
+[push]
+        autoSetupRemote = true
+[pull]
+        rebase = true
+
