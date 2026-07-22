@@ -1,0 +1,191 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "search": {
+    "button": false
+  },
+  "debugger": {
+    "button": false
+  },
+  "terminal": {
+    "button": false
+  },
+  "toolbar": {
+    "quick_actions": false,
+    "breadcrumbs": false
+  },
+  "inline_code_actions": false,
+  "vim": {
+    "cursor_shape": {
+      "visual": "block",
+      "replace": "bar",
+      "normal": "hollow"
+    }
+  },
+  "cursor_shape": "underline",
+  "git_panel": {
+    "folder_icons": true
+  },
+  "outline_panel": {
+    "folder_icons": true
+  },
+  "title_bar": {
+    "show_project_items": true,
+    "show_onboarding_banner": true,
+    "show_user_picture": false,
+    "button_layout": "platform_default",
+    "show_menus": true,
+    "show_user_menu": true,
+    "show_sign_in": true,
+    "show_branch_name": true,
+    "show_branch_status_icon": true
+  },
+  "diagnostics": {
+    "button": false,
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "tabs": {
+    "show_close_button": "hover",
+    "close_position": "right",
+    "file_icons": false,
+    "show_diagnostics": "all",
+  },
+  "agent": {
+    "sandbox_permissions": {
+      "network_hosts": [
+        "raw.githubusercontent.com"
+      ]
+    },
+    "play_sound_when_agent_done": "always",
+    "enable_feedback": false,
+    "default_model": {
+      "provider": "mistral",
+      "model": "devstral-medium-latest",
+      "enable_thinking": false
+    },
+    "dock": "left",
+    "sidebar_side": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "disable_ai": false,
+  "formatter": [
+    "prettier",
+    {
+      "code_action": "source.fixAll.eslint",
+    },
+  ],
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "tsserver": {
+            "maxTsServerMemory": 3184,
+          },
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+      },
+      "enable_lsp_tasks": true,
+    },
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+    "anthropic_retention": false,
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "vim_mode": true,
+  "project_panel": {
+    "button": false,
+    "indent_guides": {
+      "show": "never"
+    },
+    "git_status": true,
+    "entry_spacing": "comfortable",
+    "hide_hidden": false,
+    "git_status_indicator": false,
+    "diagnostic_badges": true,
+    "scrollbar": {
+      "horizontal_scroll": false,
+      "show": "never"
+    },
+    "folder_icons": true,
+    "hide_root": true,
+    "bold_folder_labels": false,
+    "hide_gitignore": true,
+    "dock": "right",
+    "auto_reveal_entries": true,
+  },
+  "base_keymap": "VSCode",
+  "status_bar": {
+    "cursor_position_button": false,
+    "active_language_button": false,
+    "line_endings_button": false,
+    "experimental.show": false,
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show": true,
+    "show_tab_bar_buttons": true,
+  },
+  "relative_line_numbers": "disabled",
+  "gutter": {
+    "min_line_number_digits": 2,
+    "folds": true,
+    "bookmarks": false,
+    "breakpoints": false,
+    "runnables": false,
+    "line_numbers": true,
+  },
+  "minimap": {
+    "show": "never",
+  },
+  "scrollbar": {
+    "show": "never",
+    "axes": {
+      "horizontal": false,
+      "vertical": false,
+    },
+  },
+  "cursor_blink": false,
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000,
+    },
+  },
+  "buffer_font_fallbacks": ["CascadiaCode"],
+  "buffer_font_family": "CaskaydiaCove NF",
+  "auto_indent_on_paste": true,
+  "use_on_type_format": true,
+  "tab_size": 2,
+  "icon_theme": "Zed (Default)",
+  "ui_font_size": 16,
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "Rosé Pine",
+  },
+}
