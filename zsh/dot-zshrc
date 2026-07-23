@@ -14,3 +14,12 @@ source "$HOME/.config/zsh/path.zsh"
 # Starship prompt
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
+eval "$(/home/adley/.local/bin/mise activate zsh)"
+
+# pnpm
+export PNPM_HOME="/home/adley/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
