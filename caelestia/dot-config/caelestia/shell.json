@@ -1,0 +1,50 @@
+{
+  "appearance": {
+    "transparency": {
+      "enabled": true
+    }
+  },
+  "background": {
+    "desktopClock": {
+      "enabled": false
+    },
+    "wallpaperEnabled": true
+  },
+  "bar": {
+    "activeWindow": {
+      "compact": true,
+      "inverted": false,
+      "showOnHover": false
+    },
+    "workspaces": {
+      "activeTrail": true
+    }
+  },
+  "dashboard": {
+    "enabled": true,
+    "showMedia": false,
+    "showOnHover": false
+  },
+  "general": {
+    "apps": {
+      "explorer": ["nautilus", "--new-window"],
+      "terminal": ["kitty"]
+    },
+    "idle": {
+      "inhibitWhenAudio": true,
+      "inhibitWhenCharging": false,
+      "lockBeforeSleep": true,
+      "timeouts": [
+        {
+          "idleAction": "lock",
+          "inhibitWhenAudio": false,
+          "inhibitWhenCharging": false,
+          "timeout": 120
+        }
+      ]
+    }
+  },
+  "paths": {
+    "sessionGif": "~/.config/caelestia/assets/sessionGif.gif"
+  }
+}

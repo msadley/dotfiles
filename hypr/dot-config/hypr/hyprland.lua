@@ -4,6 +4,7 @@ require("lua.keybinds")()
 require("lua.monitor")()
 require("lua.styling")()
 require("lua.gestures")()
+require("lua.window-rules")()
 
 -- Running autostart commands
 require("lua.autostart")()

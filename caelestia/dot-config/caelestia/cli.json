@@ -1,0 +1,14 @@
+{
+  "toggles": {
+    "communication": {},
+    "music": {
+      "mixtapes": {
+        "enable": true,
+        "move": true,
+        "class": [{ "class": "com.pocoguy.Muse" }],
+        "command": "mixtapes"
+      }
+    },
+    "todo": {}
+  }
+}

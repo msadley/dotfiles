@@ -13,14 +13,14 @@ return function()
 
 	hl.gesture({
 		fingers = 3,
-		direction = "up",
+		direction = "down",
 		action = "special",
-		workspace_name = "special",
+		workspace_name = "music",
 	})
 
 	hl.gesture({
 		fingers = 3,
-		direction = "down",
+		direction = "up",
 		action = "special",
 		workspace_name = "music",
 	})
@@ -29,7 +29,7 @@ return function()
 		fingers = 4,
 		direction = "down",
 		action = "special",
-		workspace_name = "communication",
+		workspace_name = "todo",
 	})
 	hl.gesture({
 		fingers = 4,

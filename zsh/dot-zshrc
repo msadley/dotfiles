@@ -10,6 +10,8 @@ source "$HOME/.config/zsh/autovenv.zsh"
 source "$HOME/.config/zsh/completion.zsh"
 source "$HOME/.config/zsh/sp-newline-fix.zsh"
 source "$HOME/.config/zsh/path.zsh"
+source "$HOME/.config/zsh/input.zsh"
+source "$HOME/.config/zsh/oc-completion.zsh"
 
 # Starship prompt
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
@@ -23,3 +25,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
+
+if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+      exec start-hyprland
+fi
