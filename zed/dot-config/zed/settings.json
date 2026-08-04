@@ -1,4 +1,16 @@
 {
+  "indent_guides": {
+    "background_coloring": "disabled",
+    "coloring": "fixed",
+    "line_width": 0,
+    "active_line_width": 1,
+    "enabled": true
+  },
+  "languages": {
+    "Python": {
+      "format_on_save": "on"
+    }
+  },
   "window_decorations": "server",
   "current_line_highlight": "gutter",
   "text_rendering_mode": "subpixel",
@@ -45,7 +57,7 @@
     "show_project_items": true,
     "show_onboarding_banner": true,
     "show_user_picture": true,
-    "button_layout": "platform_default",
+    "button_layout": "",
     "show_menus": false,
     "show_user_menu": true,
     "show_sign_in": true,

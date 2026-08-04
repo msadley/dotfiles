@@ -1,0 +1,21 @@
+IdentityFile "/home/adley/.ssh/msadley"
+
+Host ygg
+  HostName ygg.dedyn.io
+  User ubuntu
+  Port 22
+
+Host iounn
+  HostName 163.176.109.243
+  User ubuntu
+  Port 22
+
+Host fenrir
+  HostName 147.15.106.41
+  User ubuntu
+  Port 22
+
+Host services
+  HostName 10.5.8.122
+  User ubuntu
+  Port 22

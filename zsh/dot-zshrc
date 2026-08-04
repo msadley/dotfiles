@@ -1,31 +1,11 @@
-HISTFILE=~/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
+autoload -Uz glob
 
-setopt INC_APPEND_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
+# Load all .zsh modules
+for file in /home/adley/.config/zsh/**/*.zsh(.N); do
+  source "$file"
+done
 
-source "$HOME/.config/zsh/aliases.zsh"
-source "$HOME/.config/zsh/autovenv.zsh"
-source "$HOME/.config/zsh/completion.zsh"
-source "$HOME/.config/zsh/sp-newline-fix.zsh"
-source "$HOME/.config/zsh/path.zsh"
-source "$HOME/.config/zsh/input.zsh"
-source "$HOME/.config/zsh/oc-completion.zsh"
-
-# Starship prompt
-export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
-eval "$(starship init zsh)"
-eval "$(/home/adley/.local/bin/mise activate zsh)"
-
-# pnpm
-export PNPM_HOME="/home/adley/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-# pnpm end
-
+# Automatically start hyprland from tty
 if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
       exec start-hyprland
 fi
