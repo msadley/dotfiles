@@ -38,7 +38,7 @@
                     "idleAction": "lock",
                     "inhibitWhenAudio": false,
                     "inhibitWhenCharging": false,
-                    "timeout": 120
+                    "timeout": 360
                 }
             ]
         }
