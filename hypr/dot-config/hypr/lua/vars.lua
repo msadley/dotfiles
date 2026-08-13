@@ -1,5 +1,5 @@
 return {
   terminal = "kitty",
   browser = "firefox",
-  fileManager = "nautilus"
+  fileManager = "kitty yazi"
 }

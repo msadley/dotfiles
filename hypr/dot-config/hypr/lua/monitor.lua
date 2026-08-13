@@ -12,5 +12,5 @@ return function()
 		},
 	})
 
-	hl.env("GDK_SCALE", "2")
+	hl.env("GDK_SCALE", "1")
 end

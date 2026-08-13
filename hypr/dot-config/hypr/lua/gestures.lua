@@ -15,7 +15,7 @@ return function()
 		fingers = 3,
 		direction = "down",
 		action = "special",
-		workspace_name = "music",
+		workspace_name = "special",
 	})
 
 	hl.gesture({

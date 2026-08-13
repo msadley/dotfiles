@@ -1,7 +1,7 @@
 return function()
 	hl.config({
 		general = {
-			gaps_in = 5,
+			gaps_in = 4,
 			gaps_out = 8,
 			border_size = 0,
 			resize_on_border = false,
@@ -11,16 +11,12 @@ return function()
 
 		decoration = {
 			rounding = 20,
-			rounding_power = 2,
+			rounding_power = 3,
 
 			active_opacity = 1.0,
 			inactive_opacity = 1.0,
 
-			shadow = {
-				enabled = true,
-				range = 4,
-				render_power = 3,
-			},
+			shadow = { enabled = false },
 
 			blur = {
 				enabled = true,
@@ -29,27 +25,19 @@ return function()
 				vibrancy = 0.1696,
 			},
 		},
-	})
 
-	hl.config({
 		dwindle = {
-			preserve_split = true,
+			preserve_split = false,
 		},
-	})
 
-	hl.config({
 		master = {
 			new_status = "master",
 		},
-	})
 
-	hl.config({
 		scrolling = {
 			fullscreen_on_one_column = true,
 		},
-	})
 
-	hl.config({
 		misc = {
 			force_default_wallpaper = 0,
 			disable_hyprland_logo = true,
