@@ -19,3 +19,11 @@ Host services
   HostName 10.5.8.122
   User ubuntu
   Port 22
+
+Host bastion 
+HostName 10.3.3.250
+User ubuntu
+
+Host heimdall
+  HostName 192.168.0.67
+  User adley
