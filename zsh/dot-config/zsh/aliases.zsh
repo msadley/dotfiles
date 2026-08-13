@@ -15,3 +15,4 @@ alias lear="clear"
 alias ear="clear"
 alias rclear="clear"
 
+alias ssh="kitten ssh"

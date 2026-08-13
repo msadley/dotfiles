@@ -4,10 +4,11 @@ autoload -U down-line-or-beginning-search
 
 zmodload zsh/complist
 
-if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
-  compinit
+local zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
+if [[ ! -f "$zcompdump" ]] || () { setopt localoptions extendedglob; [[ -n ${zcompdump}(#qN.mh+24) ]]; }; then
+  compinit -d "$zcompdump"
 else
-  compinit -C
+  compinit -C -d "$zcompdump"
 fi
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'

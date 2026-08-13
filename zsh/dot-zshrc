@@ -1,7 +1,10 @@
 autoload -Uz glob
 
-# Load all .zsh modules
-for file in /home/adley/.config/zsh/**/*.zsh(.N); do
+# Register custom completions directory in fpath BEFORE compinit runs
+fpath=(/home/adley/.config/zsh/completions $fpath)
+
+# Load all .zsh modules (excluding completions)
+for file in /home/adley/.config/zsh/*.zsh(.N) /home/adley/.config/zsh/apps/*.zsh(.N); do
   source "$file"
 done
 
@@ -9,3 +12,4 @@ done
 if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
       exec start-hyprland
 fi
+
