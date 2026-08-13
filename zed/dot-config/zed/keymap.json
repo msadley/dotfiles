@@ -1,33 +1,52 @@
-// Zed keymap
-//
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
 [
-  {
-    "context": "Workspace",
-    "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    },
-  },
-  {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      // "j k": "vim::NormalBefore"
-    },
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "ctrl-'": "terminal_panel::Toggle"
-    }
-  },
   {
     "context": "Workspace",
     "unbind": {
       "ctrl-`": "terminal_panel::Toggle"
+    },
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight"
     }
-  }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-h": "buffer_search::DeployReplace"
+    },
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // search
+      "space f f": "file_finder::Toggle",
+      "space space": "file_finder::Toggle",
+      "space f g": "workspace::NewSearch",
+      "space /": "workspace::NewSearch",
+
+      // explorer
+      "space e": "project_panel::ToggleFocus",
+
+      // tabs
+      "space b b": "tab_switcher::Toggle",
+      "space ,": "tab_switcher::Toggle",
+      "space b d": "pane::CloseActiveItem",
+      "H": "pane::ActivateLastItem",
+      "L": "pane::ActivateNextItem",
+
+      // terminal
+      "space f t": "terminal_panel::Toggle",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+  },
 ]
