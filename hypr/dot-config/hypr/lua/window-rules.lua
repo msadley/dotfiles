@@ -39,6 +39,11 @@ return function()
 		},
 		float = true,
 	})
+
+	hl.window_rule({
+		match = {
+			class = "org.quickshell",
+		},
+		float = true,
+	})
 end
-
-

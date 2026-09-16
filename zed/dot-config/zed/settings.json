@@ -1,7 +1,7 @@
 {
   // # UI & Appearance
   "soft_wrap": "editor_width",
-  "theme": "Rosé Pine",
+  "theme": "Caelestia",
   "icon_theme": "Zed (Default)",
   "ui_font_family": "SF Pro Display",
   "ui_font_size": 16,
@@ -68,10 +68,10 @@
 
   // # Layout & Panels
   "title_bar": {
+    "show_worktree_name": true,
     "show_project_items": true,
     "show_onboarding_banner": true,
     "show_user_picture": true,
-    "button_layout": "",
     "show_menus": false,
     "show_user_menu": true,
     "show_sign_in": true,
@@ -80,7 +80,7 @@
   },
   "tab_bar": {
     "show_nav_history_buttons": false,
-    "show": false,
+    "show": true,
     "show_tab_bar_buttons": true
   },
   "tabs": {
@@ -113,18 +113,11 @@
       "horizontal_scroll": false,
       "show": "never"
     },
-    "folder_icons": true,
     "hide_root": true,
     "bold_folder_labels": false,
     "hide_gitignore": true,
     "dock": "right",
     "auto_reveal_entries": true
-  },
-  "git_panel": {
-    "folder_icons": true
-  },
-  "outline_panel": {
-    "folder_icons": true
   },
   "search": {
     "button": false
@@ -145,7 +138,19 @@
   },
 
   // # Languages & LSP
-  "languages": {},
+  // Keep a single TypeScript server (vtsls). The `tsgo` extension runs a
+  // second, overlapping TS server and causes doubled hovers/diagnostics.
+  "languages": {
+    "TypeScript": {
+      "language_servers": ["vtsls", "eslint", "!tsgo"]
+    },
+    "TSX": {
+      "language_servers": ["vtsls", "eslint", "!tsgo"]
+    },
+    "JavaScript": {
+      "language_servers": ["vtsls", "eslint", "!tsgo"]
+    }
+  },
   "lsp": {
     "vtsls": {
       "settings": {

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://opencode.ai/theme.json",
+  "theme": {
+    "primary": "#{{ primary.hex }}",
+    "secondary": "#{{ secondary.hex }}",
+    "accent": "#{{ tertiary.hex }}",
+    "error": "#{{ error.hex }}",
+    "warning": "#{{ yellow.hex }}",
+    "success": "#{{ green.hex }}",
+    "info": "#{{ blue.hex }}",
+
+    "text": "#{{ onSurface.hex }}",
+    "textMuted": "#{{ subtext0.hex }}",
+
+    "background": "#{{ surface.hex }}",
+    "backgroundPanel": "#{{ surfaceContainerLow.hex }}",
+    "backgroundElement": "#{{ surfaceContainerHigh.hex }}",
+
+    "border": "#{{ outlineVariant.hex }}",
+    "borderActive": "#{{ primary.hex }}",
+    "borderSubtle": "#{{ surfaceVariant.hex }}",
+
+    "diffAdded": "#{{ green.hex }}",
+    "diffRemoved": "#{{ red.hex }}",
+    "diffContext": "#{{ subtext1.hex }}",
+    "diffHunkHeader": "#{{ subtext0.hex }}",
+    "diffHighlightAdded": "#{{ teal.hex }}",
+    "diffHighlightRemoved": "#{{ maroon.hex }}",
+    "diffAddedBg": "#{{ surfaceContainerLowest.hex }}",
+    "diffRemovedBg": "#{{ surfaceContainerLowest.hex }}",
+    "diffContextBg": "#{{ surfaceContainerLow.hex }}",
+    "diffLineNumber": "#{{ surfaceContainerLow.hex }}",
+    "diffAddedLineNumberBg": "#{{ surfaceContainerLowest.hex }}",
+    "diffRemovedLineNumberBg": "#{{ surfaceContainerLowest.hex }}",
+
+    "markdownText": "#{{ onSurface.hex }}",
+    "markdownHeading": "#{{ primary.hex }}",
+    "markdownLink": "#{{ blue.hex }}",
+    "markdownLinkText": "#{{ sky.hex }}",
+    "markdownCode": "#{{ green.hex }}",
+    "markdownBlockQuote": "#{{ subtext0.hex }}",
+    "markdownEmph": "#{{ maroon.hex }}",
+    "markdownStrong": "#{{ peach.hex }}",
+    "markdownHorizontalRule": "#{{ surfaceVariant.hex }}",
+    "markdownListItem": "#{{ primary.hex }}",
+    "markdownListEnumeration": "#{{ secondary.hex }}",
+    "markdownImage": "#{{ tertiary.hex }}",
+    "markdownImageText": "#{{ pink.hex }}",
+    "markdownCodeBlock": "#{{ onSurfaceVariant.hex }}",
+
+    "syntaxComment": "#{{ overlay0.hex }}",
+    "syntaxKeyword": "#{{ mauve.hex }}",
+    "syntaxFunction": "#{{ blue.hex }}",
+    "syntaxVariable": "#{{ teal.hex }}",
+    "syntaxString": "#{{ green.hex }}",
+    "syntaxNumber": "#{{ peach.hex }}",
+    "syntaxType": "#{{ yellow.hex }}",
+    "syntaxOperator": "#{{ sky.hex }}",
+    "syntaxPunctuation": "#{{ subtext1.hex }}"
+  }
+}

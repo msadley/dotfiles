@@ -1,14 +1,20 @@
 return function()
-	hl.config({
-		gestures = {
-			workspace_swipe_use_r = true,
-		},
+	hl.gesture({
+		fingers = 3,
+		direction = "left",
+		scale = 0.4,
+		action = function()
+			hl.dispatch(hl.dsp.focus({ workspace = "+1" }))
+		end,
 	})
 
 	hl.gesture({
 		fingers = 3,
-		direction = "horizontal",
-		action = "workspace",
+		direction = "right",
+		scale = 0.4,
+		action = function()
+			hl.dispatch(hl.dsp.focus({ workspace = "-1" }))
+		end,
 	})
 
 	hl.gesture({

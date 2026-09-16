@@ -6,6 +6,7 @@ require("lua.styling")()
 require("lua.gestures")()
 require("lua.window-rules")()
 require("lua.animations")()
+require("lua.workspaces")()
 
 -- Running autostart commands
 require("lua.autostart")()
