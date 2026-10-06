@@ -1,7 +1,14 @@
 return function()
 	hl.workspace_rule({
+		workspace = "special",
+		monitor = "eDP-1",
+		default = true,
+		persistent = true,
+	})
+
+	hl.workspace_rule({
 		workspace = "10",
-		monitor = "HDMI-A-1",
+		monitor = "eDP-1",
 		default = true,
 		persistent = true,
 	})

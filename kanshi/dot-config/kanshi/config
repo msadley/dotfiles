@@ -1,8 +1,3 @@
 profile default {
   output eDP-1 enable
 }
-
-profile work {
-  output eDP-1 position 0,0
-  output HDMI-A-1 mode 1920x1080@60Hz position -160,-1080
-}

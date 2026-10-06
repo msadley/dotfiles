@@ -1,5 +1,10 @@
 {
   // # UI & Appearance
+  "agent_servers": {
+    "antigravity-acp": {
+      "type": "registry"
+    }
+  },
   "soft_wrap": "editor_width",
   "theme": "Caelestia",
   "icon_theme": "Zed (Default)",
@@ -22,14 +27,14 @@
   "inline_code_actions": false,
   "autosave": {
     "after_delay": {
-      "milliseconds": 1000
-    }
+      "milliseconds": 1000,
+    },
   },
   "formatter": [
     "prettier",
     {
-      "code_action": "source.fixAll.eslint"
-    }
+      "code_action": "source.fixAll.eslint",
+    },
   ],
 
   // # Gutter, Minimap & Scrollbar
@@ -38,7 +43,7 @@
     "coloring": "fixed",
     "line_width": 0,
     "active_line_width": 1,
-    "enabled": true
+    "enabled": true,
   },
   "gutter": {
     "min_line_number_digits": 1,
@@ -46,13 +51,13 @@
     "bookmarks": false,
     "breakpoints": false,
     "runnables": false,
-    "line_numbers": true
+    "line_numbers": true,
   },
   "minimap": {
-    "show": "never"
+    "show": "never",
   },
   "scrollbar": {
-    "show": "never"
+    "show": "never",
   },
 
   // # Keymaps & Vim
@@ -62,8 +67,8 @@
     "cursor_shape": {
       "visual": "hollow",
       "replace": "block",
-      "normal": "underline"
-    }
+      "normal": "underline",
+    },
   },
 
   // # Layout & Panels
@@ -74,35 +79,35 @@
     "show_user_picture": true,
     "show_menus": false,
     "show_user_menu": true,
-    "show_sign_in": true,
+    "show_sign_in": false,
     "show_branch_name": true,
-    "show_branch_status_icon": true
+    "show_branch_status_icon": true,
   },
   "tab_bar": {
     "show_nav_history_buttons": false,
     "show": true,
-    "show_tab_bar_buttons": true
+    "show_tab_bar_buttons": true,
   },
   "tabs": {
     "show_close_button": "hover",
     "close_position": "right",
     "file_icons": false,
-    "show_diagnostics": "all"
+    "show_diagnostics": "all",
   },
   "toolbar": {
     "quick_actions": false,
-    "breadcrumbs": false
+    "breadcrumbs": false,
   },
   "status_bar": {
     "cursor_position_button": false,
     "active_language_button": false,
     "line_endings_button": false,
-    "experimental.show": false
+    "experimental.show": false,
   },
   "project_panel": {
     "button": false,
     "indent_guides": {
-      "show": "never"
+      "show": "never",
     },
     "git_status": true,
     "entry_spacing": "comfortable",
@@ -111,30 +116,30 @@
     "diagnostic_badges": true,
     "scrollbar": {
       "horizontal_scroll": false,
-      "show": "never"
+      "show": "never",
     },
     "hide_root": true,
     "bold_folder_labels": false,
     "hide_gitignore": true,
     "dock": "right",
-    "auto_reveal_entries": true
+    "auto_reveal_entries": true,
   },
   "search": {
-    "button": false
+    "button": false,
   },
   "debugger": {
-    "button": false
+    "button": false,
   },
   "diagnostics": {
     "button": false,
     "inline": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
   "terminal": {
     "font_size": 13.0,
     "font_family": "Liga SFMonoNerdFont",
-    "button": false
+    "button": false,
   },
 
   // # Languages & LSP
@@ -142,65 +147,87 @@
   // second, overlapping TS server and causes doubled hovers/diagnostics.
   "languages": {
     "TypeScript": {
-      "language_servers": ["vtsls", "eslint", "!tsgo"]
+      "language_servers": ["vtsls", "eslint", "!tsgo"],
     },
     "TSX": {
-      "language_servers": ["vtsls", "eslint", "!tsgo"]
+      "language_servers": ["vtsls", "eslint", "!tsgo"],
     },
     "JavaScript": {
-      "language_servers": ["vtsls", "eslint", "!tsgo"]
-    }
+      "language_servers": ["vtsls", "eslint", "!tsgo"],
+    },
   },
   "lsp": {
     "vtsls": {
       "settings": {
         "typescript": {
           "tsserver": {
-            "maxTsServerMemory": 3184
+            "maxTsServerMemory": 3184,
           },
           "updateImportsOnFileMove": {
-            "enabled": "always"
-          }
+            "enabled": "always",
+          },
         },
         "javascript": {
           "updateImportsOnFileMove": {
-            "enabled": "always"
-          }
-        }
+            "enabled": "always",
+          },
+        },
       },
-      "enable_lsp_tasks": true
-    }
+      "enable_lsp_tasks": true,
+    },
   },
 
   // # AI & Agent
   "disable_ai": false,
   "agent": {
+    "default_model": {
+      "provider": "openrouter",
+      "model": "meta/muse-spark-1.3-contributor",
+      "enable_thinking": true,
+      "effort": "medium",
+    },
     "sandbox_permissions": {
-      "network_hosts": ["raw.githubusercontent.com"]
+      "network_hosts": ["raw.githubusercontent.com"],
     },
     "play_sound_when_agent_done": "always",
     "enable_feedback": false,
     "dock": "left",
     "sidebar_side": "left",
-    "favorite_models": [],
-    "model_parameters": []
+    "favorite_models": [
+      {
+        "provider": "openrouter",
+        "model": "meta/muse-spark-1.3-contributor",
+        "enable_thinking": true,
+        "effort": "medium",
+      },
+    ],
+    "model_parameters": [],
+  },
+  "edit_predictions": {
+    "provider": "ollama",
+    "ollama": {
+      "api_url": "http://localhost:11434",
+      "model": "qwen2.5-coder:1.5b",
+      "prompt_format": "infer",
+      "max_output_tokens": 512,
+    },
   },
 
   // # System, Git & Telemetry
   "git": {
     "inline_blame": {
-      "enabled": false
-    }
+      "enabled": false,
+    },
   },
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
-    "anthropic_retention": false
+    "anthropic_retention": false,
   },
   "session": {
-    "trust_all_worktrees": true
+    "trust_all_worktrees": true,
   },
   "use_system_path_prompts": true,
   "use_system_prompts": true,
-  "cli_default_open_behavior": "existing_window"
+  "cli_default_open_behavior": "existing_window",
 }

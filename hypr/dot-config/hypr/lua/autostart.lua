@@ -10,11 +10,12 @@ return function()
 		hl.exec_cmd("wl-paste --type image --watch cliphist store")
 		hl.exec_cmd("kanshi")
 
-		-- Tray apps
-		hl.exec_cmd("sleep 3 && whatsie")
-		hl.exec_cmd("sleep 3 && mattermost-desktop")
-
 		-- Scripts
 		hl.exec_cmd("/home/adley/.config/hypr/scripts/scrcpy-fix.sh")
+		hl.exec_cmd("/home/adley/.config/hypr/scripts/auto-power-profile.sh")
+
+		-- Miscellaneous
+		hl.exec_cmd("sleep 3 && whatsie && mattermost-desktop && logseq")
+		hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	end)
 end

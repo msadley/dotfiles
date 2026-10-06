@@ -1,0 +1,208 @@
+/* Rendered by caelestia to ~/.local/state/caelestia/theme/qbittorrent-stylesheet.qss */
+/* Consumed via qbittorrent stow package: ~/.config/qBittorrent/themes/caelestia/stylesheet.qss */
+
+QWidget {
+  background-color: #{{ surfaceContainerLow.hex }};
+  color: #{{ onSurface.hex }};
+  selection-background-color: #{{ primary.hex }};
+  selection-color: #{{ onPrimary.hex }};
+}
+
+QMainWindow, QDialog {
+  background-color: #{{ surface.hex }};
+}
+
+QMenuBar {
+  background-color: #{{ surface.hex }};
+  color: #{{ onSurface.hex }};
+}
+QMenuBar::item:selected {
+  background-color: #{{ surfaceContainerHigh.hex }};
+  color: #{{ primary.hex }};
+}
+QMenu {
+  background-color: #{{ surfaceContainerLow.hex }};
+  color: #{{ onSurface.hex }};
+  border: 1px solid #{{ outlineVariant.hex }};
+}
+QMenu::item:selected {
+  background-color: #{{ primary.hex }};
+  color: #{{ onPrimary.hex }};
+}
+QMenu::separator {
+  background-color: #{{ outlineVariant.hex }};
+  height: 1px;
+}
+
+QToolBar {
+  background-color: #{{ surface.hex }};
+  border: none;
+  spacing: 4px;
+}
+QToolBar QToolButton {
+  background-color: transparent;
+  color: #{{ onSurface.hex }};
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 4px;
+}
+QToolBar QToolButton:hover {
+  background-color: #{{ surfaceContainerHigh.hex }};
+  border-color: #{{ outlineVariant.hex }};
+}
+QToolBar QToolButton:pressed {
+  background-color: #{{ primary.hex }};
+  color: #{{ onPrimary.hex }};
+}
+
+QTabWidget::pane {
+  background-color: #{{ surface.hex }};
+  border: 1px solid #{{ outlineVariant.hex }};
+}
+QTabBar::tab {
+  background-color: #{{ surfaceContainerLow.hex }};
+  color: #{{ subtext1.hex }};
+  border: 1px solid #{{ outlineVariant.hex }};
+  border-bottom: none;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding: 6px 14px;
+}
+QTabBar::tab:selected {
+  background-color: #{{ surfaceContainerHigh.hex }};
+  color: #{{ primary.hex }};
+}
+QTabBar::tab:hover:!selected {
+  background-color: #{{ surfaceVariant.hex }};
+  color: #{{ onSurface.hex }};
+}
+
+QTreeView, QListView, QTableView {
+  background-color: #{{ surface.hex }};
+  color: #{{ onSurface.hex }};
+  alternate-background-color: #{{ surfaceContainerLow.hex }};
+  border: 1px solid #{{ outlineVariant.hex }};
+  outline: none;
+}
+QTreeView::item:selected, QListView::item:selected, QTableView::item:selected {
+  background-color: #{{ primary.hex }};
+  color: #{{ onPrimary.hex }};
+}
+QTreeView::item:hover:!selected, QListView::item:hover:!selected {
+  background-color: #{{ surfaceContainerHigh.hex }};
+}
+QHeaderView::section {
+  background-color: #{{ surfaceContainerLow.hex }};
+  color: #{{ onSurfaceVariant.hex }};
+  border: none;
+  border-right: 1px solid #{{ outlineVariant.hex }};
+  padding: 4px 8px;
+}
+
+QLineEdit, QComboBox, QSpinBox, QDoubleSpinBox {
+  background-color: #{{ surfaceContainerLow.hex }};
+  color: #{{ onSurface.hex }};
+  border: 1px solid #{{ outlineVariant.hex }};
+  border-radius: 6px;
+  padding: 4px 8px;
+  selection-background-color: #{{ secondary.hex }};
+  selection-color: #{{ onSecondary.hex }};
+}
+QLineEdit:focus, QComboBox:focus {
+  border-color: #{{ primary.hex }};
+}
+QComboBox QAbstractItemView {
+  background-color: #{{ surfaceContainerLow.hex }};
+  color: #{{ onSurface.hex }};
+  selection-background-color: #{{ primary.hex }};
+  selection-color: #{{ onPrimary.hex }};
+  border: 1px solid #{{ outlineVariant.hex }};
+}
+
+QPushButton {
+  background-color: #{{ surfaceContainerHigh.hex }};
+  color: #{{ onSurface.hex }};
+  border: 1px solid #{{ outlineVariant.hex }};
+  border-radius: 6px;
+  padding: 6px 14px;
+}
+QPushButton:hover {
+  border-color: #{{ primary.hex }};
+  color: #{{ primary.hex }};
+}
+QPushButton:pressed, QPushButton:default {
+  background-color: #{{ primary.hex }};
+  color: #{{ onPrimary.hex }};
+  border-color: #{{ primary.hex }};
+}
+QPushButton:disabled {
+  background-color: #{{ surfaceContainerLow.hex }};
+  color: #{{ subtext0.hex }};
+  border-color: #{{ surfaceVariant.hex }};
+}
+
+QCheckBox, QRadioButton {
+  color: #{{ onSurface.hex }};
+  spacing: 6px;
+}
+QCheckBox::indicator, QRadioButton::indicator {
+  width: 16px;
+  height: 16px;
+}
+QCheckBox::indicator:unchecked, QRadioButton::indicator:unchecked {
+  border: 1px solid #{{ outline.hex }};
+  background-color: #{{ surfaceContainerLow.hex }};
+}
+QCheckBox::indicator:checked, QRadioButton::indicator:checked {
+  border: 1px solid #{{ primary.hex }};
+  background-color: #{{ primary.hex }};
+}
+
+QScrollBar:vertical, QScrollBar:horizontal {
+  background-color: transparent;
+  border: none;
+}
+QScrollBar::handle:vertical, QScrollBar::handle:horizontal {
+  background-color: #{{ surfaceVariant.hex }};
+  border-radius: 4px;
+  min-height: 24px;
+  min-width: 24px;
+}
+QScrollBar::handle:vertical:hover, QScrollBar::handle:horizontal:hover {
+  background-color: #{{ outline.hex }};
+}
+QScrollBar::add-line, QScrollBar::sub-line {
+  background: none;
+  border: none;
+}
+
+QStatusBar {
+  background-color: #{{ surface.hex }};
+  color: #{{ subtext1.hex }};
+}
+QStatusBar::item {
+  border: none;
+}
+
+QProgressBar {
+  background-color: #{{ surfaceContainerLow.hex }};
+  color: #{{ onSurface.hex }};
+  border: 1px solid #{{ outlineVariant.hex }};
+  border-radius: 4px;
+  text-align: center;
+}
+QProgressBar::chunk {
+  background-color: #{{ primary.hex }};
+  border-radius: 3px;
+}
+
+QSplitter::handle {
+  background-color: #{{ outlineVariant.hex }};
+}
+
+QToolTip {
+  background-color: #{{ surfaceContainerHigh.hex }};
+  color: #{{ onSurface.hex }};
+  border: 1px solid #{{ outlineVariant.hex }};
+  padding: 4px;
+}

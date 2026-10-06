@@ -1,7 +1,7 @@
 {
     "appearance": {
         "transparency": {
-            "enabled": false
+            "enabled": true
         }
     },
     "background": {
@@ -32,18 +32,21 @@
         "idle": {
             "inhibitWhenAudio": true,
             "inhibitWhenCharging": false,
-            "lockBeforeSleep": true,
+            "lockBeforeSleep": false,
             "timeouts": [
                 {
+                    "enabled": true,
                     "idleAction": "lock",
                     "inhibitWhenAudio": false,
                     "inhibitWhenCharging": false,
+                    "respectInhibitors": true,
                     "timeout": 360
                 }
             ]
         }
     },
     "paths": {
-        "sessionGif": "~/.config/caelestia/assets/sessionGif.gif"
+        "sessionGif": "~/.config/caelestia/assets/sessionGif.gif",
+        "wallpaperDir": "~/dotfiles/wallpapers"
     }
 }

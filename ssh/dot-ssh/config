@@ -1,7 +1,7 @@
 IdentityFile "/home/adley/.ssh/msadley"
 
 Host ygg
-  HostName ygg.dedyn.io
+  HostName 137.131.177.113
   User ubuntu
   Port 22
 

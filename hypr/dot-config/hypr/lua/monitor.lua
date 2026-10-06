@@ -1,9 +1,14 @@
 return function()
 	hl.monitor({
 		output = "eDP-1",
-		mode = "preferred",
+		mode = "1920x1200@60",
 		position = "auto",
 		scale = "1.2",
+	})
+
+	hl.monitor({
+		output = "HDMI-A-1",
+		mirror = "eDP-1",
 	})
 
 	hl.config({

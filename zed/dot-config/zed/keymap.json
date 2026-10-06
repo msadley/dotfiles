@@ -2,13 +2,14 @@
   {
     "context": "Workspace",
     "unbind": {
-      "ctrl-`": "terminal_panel::Toggle"
+      "ctrl-`": "terminal_panel::Toggle",
     },
     "bindings": {
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-l": "workspace::ActivatePaneRight"
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-shift-a": "agent::Toggle"
     }
   },
   {
@@ -20,7 +21,8 @@
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-l": "workspace::ActivatePaneRight"
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-shift-a": "agent::Toggle"
     }
   },
   {

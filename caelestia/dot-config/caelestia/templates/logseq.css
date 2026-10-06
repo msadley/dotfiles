@@ -1,0 +1,146 @@
+/* Rendered by caelestia to ~/.local/state/caelestia/theme/logseq.css */
+/* Consumed via ~/logseq/logseq/custom.css symlink (see logseq stow package). */
+
+.dark-theme,
+html[data-theme="dark"] {
+  --ls-primary-background-color: #{{ surface.hex }};
+  --ls-secondary-background-color: #{{ surfaceContainerLow.hex }};
+  --ls-tertiary-background-color: #{{ surfaceContainerHigh.hex }};
+  --ls-quaternary-background-color: #{{ surfaceContainerHigh.hex }};
+  --ls-quinary-background-color: #{{ surfaceContainerLowest.hex }};
+
+  --ls-active-primary-color: #{{ primary.hex }};
+  --ls-active-secondary-color: #{{ secondary.hex }};
+
+  --ls-primary-text-color: #{{ onSurface.hex }};
+  --ls-secondary-text-color: #{{ onSurfaceVariant.hex }};
+
+  --ls-title-text-color: #{{ onSurface.hex }};
+  --ls-head-text-color: #{{ onSurface.hex }};
+
+  --ls-search-background-color: #{{ surfaceContainerLow.hex }};
+  --ls-border-color: #{{ outlineVariant.hex }};
+  --ls-secondary-border-color: #{{ outlineVariant.hex }};
+  --ls-tertiary-border-color: #{{ outline.hex }};
+  --ls-menu-hover-color: #{{ surfaceContainerHigh.hex }};
+  --ls-table-tr-even-background-color: #{{ surfaceContainerLow.hex }};
+
+  --ls-link-text-color: #{{ blue.hex }};
+  --ls-link-text-hover-color: #{{ sky.hex }};
+  --ls-link-ref-text-color: #{{ teal.hex }};
+  --ls-link-ref-text-hover-color: #{{ sky.hex }};
+  --ls-block-ref-link-text-color: #{{ teal.hex }};
+  --ls-anchor-link-text-color: #{{ blue.hex }};
+  --ls-anchor-link-text-color-hover: #{{ sky.hex }};
+  --ls-tag-text-color: #{{ mauve.hex }};
+  --ls-tag-text-hover-color: #{{ pink.hex }};
+  --ls-cloze-text-color: #{{ teal.hex }};
+
+  --ls-block-bullet-border-color: #{{ outlineVariant.hex }};
+  --ls-block-bullet-color: #{{ subtext0.hex }};
+  --ls-block-highlight-color: #{{ surfaceContainerHigh.hex }};
+  --ls-block-properties-background-color: #{{ surfaceContainerLow.hex }};
+  --ls-page-properties-background-color: #{{ surfaceContainerLowest.hex }};
+
+  --ls-page-checkbox-color: transparent;
+  --ls-page-checkbox-border-color: #{{ outline.hex }};
+
+  --ls-page-blockquote-color: #{{ onSurface.hex }};
+  --ls-page-blockquote-bg-color: #{{ surfaceContainerLow.hex }};
+  --ls-page-blockquote-border-color: #{{ primary.hex }};
+
+  --ls-page-inline-code-color: #{{ peach.hex }};
+  --ls-page-inline-code-bg-color: #{{ surfaceContainerLow.hex }};
+
+  --ls-page-mark-color: #{{ onPrimary.hex }};
+  --ls-page-mark-bg-color: #{{ primary.hex }};
+
+  --ls-selection-text-color: #{{ onSecondary.hex }};
+  --ls-selection-background-color: #{{ secondary.hex }};
+
+  --ls-header-button-background: #{{ surfaceContainerHigh.hex }};
+  --ls-icon-color: #{{ onSurfaceVariant.hex }};
+  --ls-search-icon-color: #{{ subtext0.hex }};
+  --ls-a-chosen-bg: #{{ surfaceContainerHigh.hex }};
+  --ls-right-sidebar-code-bg-color: #{{ surfaceContainerLow.hex }};
+  --ls-slide-background-color: #{{ surface.hex }};
+  --ls-guideline-color: #{{ outlineVariant.hex }};
+
+  --ls-scrollbar-background-color: #{{ surface.hex }};
+  --ls-scrollbar-foreground-color: #{{ surfaceContainerHigh.hex }};
+  --ls-scrollbar-thumb-hover-color: #{{ outline.hex }};
+
+  --ls-marker-text-color: #{{ peach.hex }};
+  --ls-marker-text-bg-color: #{{ surfaceContainerHigh.hex }};
+  --ls-marker-text-bg-hover-color: #{{ surfaceVariant.hex }};
+
+  --ls-highlight-color-gray: #{{ subtext0.hex }};
+  --ls-highlight-color-red: #{{ red.hex }};
+  --ls-highlight-color-yellow: #{{ yellow.hex }};
+  --ls-highlight-color-green: #{{ green.hex }};
+  --ls-highlight-color-blue: #{{ blue.hex }};
+  --ls-highlight-color-purple: #{{ mauve.hex }};
+  --ls-highlight-color-pink: #{{ maroon.hex }};
+
+  --ls-error-text-color: #{{ error.hex }};
+  --ls-warning-text-color: #{{ yellow.hex }};
+  --ls-success-text-color: #{{ green.hex }};
+  --ls-error-background-color: #{{ surfaceContainerLow.hex }};
+  --ls-warning-background-color: #{{ surfaceContainerLow.hex }};
+  --ls-success-background-color: #{{ surfaceContainerLow.hex }};
+
+  --ls-wb-stroke-color-default: #{{ onSurface.hex }};
+}
+
+/* CodeMirror editor */
+html[data-theme="dark"] .CodeMirror {
+  color: #{{ onSurface.hex }} !important;
+  background-color: #{{ surface.hex }} !important;
+}
+html[data-theme="dark"] .CodeMirror .CodeMirror-activeline-background {
+  background: #{{ surfaceContainerLow.hex }};
+}
+html[data-theme="dark"] .CodeMirror .CodeMirror-gutters {
+  background-color: #{{ surfaceContainerLow.hex }};
+}
+html[data-theme="dark"] .CodeMirror .cm-keyword {
+  color: #{{ mauve.hex }};
+}
+html[data-theme="dark"] .CodeMirror .cm-operator {
+  color: #{{ sky.hex }};
+}
+html[data-theme="dark"] .CodeMirror .cm-property {
+  color: #{{ teal.hex }};
+}
+html[data-theme="dark"] .CodeMirror .cm-builtin {
+  color: #{{ red.hex }};
+}
+html[data-theme="dark"] .CodeMirror .cm-number {
+  color: #{{ peach.hex }};
+}
+html[data-theme="dark"] .CodeMirror .cm-meta {
+  color: #{{ green.hex }};
+}
+html[data-theme="dark"] .CodeMirror .cm-string,
+html[data-theme="dark"] .CodeMirror .cm-string-2 {
+  color: #{{ green.hex }};
+}
+html[data-theme="dark"] .CodeMirror .cm-comment {
+  color: #{{ overlay0.hex }};
+}
+html[data-theme="dark"] .CodeMirror .cm-variable,
+html[data-theme="dark"] .CodeMirror .cm-qualifier,
+html[data-theme="dark"] .CodeMirror .cm-variable-3,
+html[data-theme="dark"] .CodeMirror .cm-type {
+  color: #{{ onSurface.hex }};
+}
+html[data-theme="dark"] .CodeMirror .cm-def,
+html[data-theme="dark"] .CodeMirror .cm-attribute,
+html[data-theme="dark"] .CodeMirror .cm-atom,
+html[data-theme="dark"] .CodeMirror .cm-tag {
+  color: #{{ blue.hex }};
+}
+html[data-theme="dark"] .cm-s-lsradix.cm-s-dark div.CodeMirror-selected,
+html[data-theme="dark"] .cm-s-lsradix.cm-s-dark.CodeMirror ::selection {
+  background: #{{ secondary.hex }};
+}

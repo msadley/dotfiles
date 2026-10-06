@@ -8,13 +8,39 @@ return function()
 	hl.bind(hyper .. " + T", hl.dsp.exec_cmd(vars.terminal))
 	hl.bind(hyper .. " + E", hl.dsp.exec_cmd(vars.fileManager))
 	hl.bind(hyper .. " + F", hl.dsp.exec_cmd(vars.browser))
-	hl.bind(hyper .. " + C", hl.dsp.window.close())
 	hl.bind(hyper .. " + space", hl.dsp.global("caelestia:launcher"))
-	hl.bind(hyper .. " + L", hl.dsp.global("caelestia:lock"))
+	hl.bind(hyperModAlt .. " + L", hl.dsp.global("caelestia:lock"))
 	hl.bind(hyperModAlt .. " + H", hl.dsp.exec_cmd("systemctl hibernate"))
 	hl.bind(hyper .. " + P", hl.dsp.global("caelestia:screenshot"))
 	hl.bind(hyper .. " + comma", hl.dsp.exec_cmd("pkill fuzzel || caelestia clipboard"))
 	hl.bind(hyper .. " + period", hl.dsp.exec_cmd("pkill fuzzel || caelestia emoji -p"))
+
+	-- window control
+	hl.bind(hyper .. " + C", hl.dsp.window.close())
+	hl.bind(hyper .. " + H", hl.dsp.focus({ direction = "left" }))
+	hl.bind(hyper .. " + J", hl.dsp.focus({ direction = "down" }))
+	hl.bind(hyper .. " + K", hl.dsp.focus({ direction = "up" }))
+	hl.bind(hyper .. " + L", hl.dsp.focus({ direction = "right" }))
+	hl.bind(hyperMod .. " + f", hl.dsp.window.float())
+	hl.bind(hyperMod .. " + m", hl.dsp.window.drag())
+	hl.bind(hyperMod .. " + r", hl.dsp.window.resize())
+	hl.bind(
+		hyperMod .. " + Return",
+		hl.dsp.window.fullscreen({
+			mode = "fullscreen",
+			action = "toggle",
+		})
+	)
+
+	hl.bind(
+		hyperMod .. " + z",
+		hl.dsp.window.fullscreen({
+			mode = "maximized",
+			action = "toggle",
+		})
+	)
+
+	hl.bind(hyperMod .. " + p", hl.dsp.window.pin())
 
 	-- workspace control
 	hl.bind(hyper .. " + 0", hl.dsp.focus({ workspace = tostring(10) }))
@@ -65,29 +91,7 @@ return function()
 		})
 	)
 
-	-- window control
-	hl.bind(hyperMod .. " + f", hl.dsp.window.float())
-	hl.bind(hyperMod .. " + m", hl.dsp.window.drag())
-	hl.bind(hyperMod .. " + r", hl.dsp.window.resize())
-	hl.bind(hyperMod .. " + p", hl.dsp.window.pin())
-
-	hl.bind(
-		hyperMod .. " + Return",
-		hl.dsp.window.fullscreen({
-			mode = "fullscreen",
-			action = "toggle",
-		})
-	)
-
-	hl.bind(
-		hyperMod .. " + z",
-		hl.dsp.window.fullscreen({
-			mode = "maximized",
-			action = "toggle",
-		})
-	)
-
-	-- medial control
+	-- media control
 	hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })
 	hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true })
 	hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
