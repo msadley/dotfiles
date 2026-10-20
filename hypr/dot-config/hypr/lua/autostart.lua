@@ -15,7 +15,9 @@ return function()
 		hl.exec_cmd("/home/adley/.config/hypr/scripts/auto-power-profile.sh")
 
 		-- Miscellaneous
-		hl.exec_cmd("sleep 3 && whatsie && mattermost-desktop && logseq")
 		hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+		hl.exec_cmd("sleep 3 && whatsie")
+		hl.exec_cmd("sleep 3 && logseq")
+		hl.exec_cmd("sleep 3 && mattermost-desktop")
 	end)
 end
