@@ -18,6 +18,8 @@ return {
           ".git",
           ".DS_Store",
           "thumbs.db",
+          "postgres-data",
+          "secrets",
         },
       },
     },

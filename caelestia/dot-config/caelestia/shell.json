@@ -1,52 +1,53 @@
 {
-    "appearance": {
-        "transparency": {
-            "enabled": true
-        }
-    },
-    "background": {
-        "desktopClock": {
-            "enabled": false
-        },
-        "wallpaperEnabled": true
-    },
-    "bar": {
-        "activeWindow": {
-            "compact": true,
-            "inverted": false,
-            "showOnHover": false
-        },
-        "workspaces": {
-            "activeTrail": true
-        }
-    },
-    "dashboard": {
-        "enabled": false
-    },
-    "general": {
-        "apps": {
-            "terminal": [
-                "kitty"
-            ]
-        },
-        "idle": {
-            "inhibitWhenAudio": true,
-            "inhibitWhenCharging": false,
-            "lockBeforeSleep": false,
-            "timeouts": [
-                {
-                    "enabled": true,
-                    "idleAction": "lock",
-                    "inhibitWhenAudio": false,
-                    "inhibitWhenCharging": false,
-                    "respectInhibitors": true,
-                    "timeout": 360
-                }
-            ]
-        }
-    },
-    "paths": {
-        "sessionGif": "~/.config/caelestia/assets/sessionGif.gif",
-        "wallpaperDir": "~/dotfiles/wallpapers"
+  "appearance": {
+    "transparency": {
+      "enabled": true
     }
+  },
+  "background": {
+    "desktopClock": {
+      "enabled": false
+    },
+    "wallpaperEnabled": true
+  },
+  "bar": {
+    "activeWindow": {
+      "compact": true,
+      "inverted": false,
+      "showOnHover": false
+    },
+    "workspaces": {
+      "activeTrail": true
+    }
+  },
+  "dashboard": {
+    "enabled": false
+  },
+  "lock": {
+    "hideNotifs": true
+  },
+  "general": {
+    "apps": {
+      "terminal": ["kitty"]
+    },
+    "idle": {
+      "inhibitWhenAudio": true,
+      "inhibitWhenCharging": false,
+      "lockBeforeSleep": false,
+      "timeouts": [
+        {
+          "enabled": true,
+          "idleAction": "lock",
+          "inhibitWhenAudio": false,
+          "inhibitWhenCharging": false,
+          "respectInhibitors": true,
+          "timeout": 360
+        }
+      ]
+    }
+  },
+  "paths": {
+    "sessionGif": "~/.config/caelestia/assets/sessionGif.gif",
+    "wallpaperDir": "~/dotfiles/wallpapers"
+  }
 }

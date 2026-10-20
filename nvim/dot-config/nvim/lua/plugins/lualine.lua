@@ -41,6 +41,22 @@ return {
           end,
         })
       end
+
+      -- Tabs indicator aligned to the right (lualine_z is the far-right section).
+      -- Hidden when there is only one tab; bufferline (top) is left untouched.
+      opts.sections = opts.sections or {}
+      opts.sections.lualine_z = opts.sections.lualine_z or {}
+      table.insert(opts.sections.lualine_z, {
+        "tabs",
+        mode = 2,
+        max_length = vim.o.columns * 2 / 5,
+        use_mode_colors = false,
+        show_modified_status = true,
+        symbols = { modified = " ●" },
+        cond = function()
+          return #vim.api.nvim_list_tabpages() > 1
+        end,
+      })
     end,
   },
 }

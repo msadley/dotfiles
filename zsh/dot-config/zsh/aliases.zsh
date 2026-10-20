@@ -16,3 +16,7 @@ alias ear="clear"
 alias rclear="clear"
 
 alias ssh="kitten ssh"
+
+alias k="kubectl"
+alias f="flux"
+alias reconcile="flux reconcile source git flux-system && flux reconcile ks flux-system"

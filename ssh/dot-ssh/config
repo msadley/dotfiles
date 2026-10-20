@@ -27,3 +27,7 @@ Host bastion
 Host heimdall
   HostName 192.168.0.67
   User adley
+
+Host ldap
+  HostName 10.3.3.12
+  User ubuntu
