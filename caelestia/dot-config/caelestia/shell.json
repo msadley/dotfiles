@@ -1,53 +1,106 @@
 {
-  "appearance": {
-    "transparency": {
-      "enabled": true
-    }
-  },
-  "background": {
-    "desktopClock": {
-      "enabled": false
-    },
-    "wallpaperEnabled": true
-  },
-  "bar": {
-    "activeWindow": {
-      "compact": true,
-      "inverted": false,
-      "showOnHover": false
-    },
-    "workspaces": {
-      "activeTrail": true
-    }
-  },
-  "dashboard": {
-    "enabled": false
-  },
-  "lock": {
-    "hideNotifs": true
-  },
-  "general": {
-    "apps": {
-      "terminal": ["kitty"]
-    },
-    "idle": {
-      "inhibitWhenAudio": true,
-      "inhibitWhenCharging": false,
-      "lockBeforeSleep": false,
-      "timeouts": [
-        {
-          "enabled": true,
-          "idleAction": "lock",
-          "inhibitWhenAudio": false,
-          "inhibitWhenCharging": false,
-          "respectInhibitors": true,
-          "timeout": 360
+    "appearance": {
+        "transparency": {
+            "enabled": true
         }
-      ]
+    },
+    "background": {
+        "desktopClock": {
+            "enabled": false
+        },
+        "wallpaperEnabled": true
+    },
+    "bar": {
+        "activeWindow": {
+            "compact": true,
+            "inverted": false,
+            "showOnHover": false
+        },
+        "workspaces": {
+            "activeTrail": true
+        }
+    },
+    "dashboard": {
+        "enabled": false
+    },
+    "general": {
+        "apps": {
+            "audio": [
+                "pavucontrol"
+            ],
+            "explorer": [
+                "yazi"
+            ],
+            "terminal": [
+                "kitty"
+            ]
+        },
+        "idle": {
+            "inhibitWhenAudio": true,
+            "inhibitWhenCharging": false,
+            "lockBeforeSleep": false,
+            "timeouts": [
+                {
+                    "enabled": true,
+                    "idleAction": "lock",
+                    "inhibitWhenAudio": false,
+                    "inhibitWhenCharging": false,
+                    "respectInhibitors": true,
+                    "timeout": 360
+                }
+            ]
+        }
+    },
+    "lock": {
+        "hideNotifs": true
+    },
+    "notifs": {
+        "fullscreen": "On"
+    },
+    "paths": {
+        "sessionGif": "~/.config/caelestia/assets/sessionGif.gif",
+        "wallpaperDir": "~/dotfiles/wallpapers"
+    },
+    "services": {
+        "dataUnits": "Decimal",
+        "weatherUnits": "Celsius"
+    },
+    "utilities": {
+        "cards": {
+            "recorder": false
+        },
+        "quickToggles": [
+            {
+                "enabled": true,
+                "id": "wifi"
+            },
+            {
+                "enabled": true,
+                "id": "bluetooth"
+            },
+            {
+                "enabled": true,
+                "id": "mic"
+            },
+            {
+                "enabled": true,
+                "id": "settings"
+            },
+            {
+                "enabled": false,
+                "id": "gameMode"
+            },
+            {
+                "enabled": true,
+                "id": "dnd"
+            },
+            {
+                "enabled": false,
+                "id": "vpn"
+            }
+        ],
+        "toasts": {
+            "fullscreen": "important"
+        }
     }
-  },
-  "paths": {
-    "sessionGif": "~/.config/caelestia/assets/sessionGif.gif",
-    "wallpaperDir": "~/dotfiles/wallpapers"
-  }
 }

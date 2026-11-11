@@ -1,12 +1,6 @@
 return function()
 	hl.window_rule({
-		match = {
-			class = "com.pocoguy.Muse",
-		},
-		workspace = "special:music",
-	})
-
-	hl.window_rule({
+		fullscreen_state = "0 0",
 		match = {
 			class = "kitty",
 		},
@@ -48,16 +42,6 @@ return function()
 		float = true,
 		center = true,
 		size = { "(monitor_w*0.5)", "(monitor_h*0.5)" },
-	})
-
-	hl.window_rule({
-
-		match = {
-			title = "Zed — Settings",
-		},
-		float = true,
-		center = true,
-		size = { "(monitor_w*0.7)", "(monitor_h*0.7)" },
 	})
 
 	hl.window_rule({
