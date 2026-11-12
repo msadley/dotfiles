@@ -1,5 +1,6 @@
 autoload -Uz add-zsh-hook
 
+unsetopt PROMPT_SP
 __newline_pending=0
 
 _screen_prompt_preexec() {
@@ -7,6 +8,7 @@ _screen_prompt_preexec() {
 }
 
 _screen_prompt_precmd() {
+  setopt PROMPT_SP
   if (( __newline_pending )); then
     print ""
     __newline_pending=0

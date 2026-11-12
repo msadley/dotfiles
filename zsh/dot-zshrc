@@ -1,4 +1,4 @@
-autoload -Uz glob
+typeset -U path fpath
 
 # Register custom completions directory in fpath BEFORE compinit runs
 fpath=(/home/adley/.config/zsh/completions $fpath)
@@ -9,7 +9,7 @@ for file in /home/adley/.config/zsh/*.zsh(.N) /home/adley/.config/zsh/apps/*.zsh
 done
 
 # Automatically start hyprland from tty
-if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
-      exec start-hyprland
+if [[ -z "$DISPLAY" && "$TTY" == "/dev/tty1" ]]; then
+  exec start-hyprland
 fi
 

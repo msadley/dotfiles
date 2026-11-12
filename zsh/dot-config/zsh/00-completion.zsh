@@ -1,14 +1,20 @@
-autoload -Uz compinit
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
+autoload -Uz compinit up-line-or-beginning-search down-line-or-beginning-search
 
 zmodload zsh/complist
 
 local zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
-if [[ ! -f "$zcompdump" ]] || () { setopt localoptions extendedglob; [[ -n ${zcompdump}(#qN.mh+24) ]]; }; then
-  compinit -d "$zcompdump"
-else
+if [[ -f "$zcompdump" ]]; then
   compinit -C -d "$zcompdump"
+  if [[ ! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc" ]] || () { setopt localoptions extendedglob; [[ -n ${zcompdump}(#qN.mh+24) ]]; }; then
+    {
+      autoload -Uz compinit
+      compinit -d "$zcompdump"
+      zcompile "$zcompdump"
+    } &!
+  fi
+else
+  compinit -d "$zcompdump"
+  zcompile "$zcompdump"
 fi
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
